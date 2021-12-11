@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "helvetica neue";
+  font-size: 20px;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: red;
+  transition: color 0.7s;
+}
+
+.slideshow-container {
+  max-width: 70%;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 580px;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 8px 8px 0;
+  user-select: none;
+}
+
+.text {
+  padding: 10px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #333;
+  font-size: 12px;
+  padding: 8px 12px;
+  top: 0;
+}
+
+p {
+  font-family: helvetica;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: lighter;
+  padding: 10px;
+}
+h1 {
+  font-family: helvetica;
+  font-size: 20px;
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href=index.html>TOMMASO DAVERIO</a></li>
+  <li style="float:right"><a href=about.html>ABOUT</a></li>
+</ul>
+
+<br/>
+
+<div class="slideshow-container">
+<h1>FACTORINO</h1>
+<p>Factoryno represents Turin creative system not denying the distinctive industrial soul of the city but adding to it the city artistic energy. From this kind of union comes &#34;the creative machine.&#34; Just three colors, white and grey recalling the industry itself and yellow to add movement and contrast are joined with simple lines, inspired by electronic circuits that become a path.The advertising campaign proposes various elements: posters,  flyers, gadgets (t-shirts, cards, bags), a social campaign (based on Instagram  filters), an app, a website and a video-teaser.</p>
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img src="appft-01.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img src="mockupft.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img src="ftposter.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+  <img src="FactorinoMockup.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+  <img src="appft-02.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">6 / 6</div>
+  <video style="width:100%" controls>
+    <source src=factorino.mp4 type="video/mp4">
+  </video>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
